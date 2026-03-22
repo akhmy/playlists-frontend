@@ -1,0 +1,53 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.headerWrapper {
+  flex-shrink: 0;
+  width: 100%;
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--bg-secondary);
+}
+
+.scrollableWrapper {
+  flex: 1;
+  overflow-y: auto;
+
+  display: flex;
+  justify-content: center;
+}
+
+.scrollableContent {
+  width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mainWrapper {
+  flex: 1;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 40px 0;
+}
+
+.footerWrapper {
+  padding: 0 20px;
+}

@@ -1,0 +1,236 @@
+.playlistContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.coverWrapper {
+  flex-shrink: 0;
+}
+
+.cover {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.subMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.author {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.starButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-surface);
+  border-radius: 20px;
+  padding: 6px 14px;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.starButton:hover {
+  background-color: var(--bg-surface-hover, var(--bg-surface));
+  color: var(--text-primary);
+}
+
+.starButton:focus {
+  outline: none;
+}
+
+.starButton.starred {
+  color: #f5c518;
+}
+
+.tracklist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tracklistHeader {
+  width: 100%;
+
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: default !important;
+  user-select: none;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.trackNumber {
+  text-align: center;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 8px;
+}
+
+.tracklistRowWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.tracklistRowWrapper:hover {
+  background: var(--bg-surface);
+}
+
+.tracklistRowWrapper:hover .removeTrackButton {
+  opacity: 1;
+}
+
+.tracklistRow {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 40px 1fr 60px;
+  align-items: center;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.trackRow:hover {
+  background: var(--surface-2);
+}
+
+.trackNum {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.trackName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trackArtist {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.trackDuration {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.removeTrackButton {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  opacity: 0;
+  transition:
+    opacity 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.removeTrackButton:hover {
+  background: var(--bg-surface-hover, rgba(255, 255, 255, 0.1));
+  color: var(--text-primary);
+}
+
+.addTrackButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.addTrackButton:hover {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}

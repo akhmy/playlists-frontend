@@ -1,0 +1,109 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: transform 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.coverWrapper {
+  position: relative;
+
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 1;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+
+  background-color: rgba(0, 0, 0, 0.35);
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+.playButton {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 4px;
+}
+
+.nameAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.author {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-surface);
+  border-radius: 20px;
+  padding: 4px 10px;
+  flex-shrink: 0;
+}
+
+.stars.starred {
+  color: #f5c518;
+}

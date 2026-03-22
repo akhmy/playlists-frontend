@@ -1,0 +1,55 @@
+.header {
+  width: 100%;
+  max-width: 1500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+  transition: color 0.1s ease;
+}
+
+.logo:hover {
+  color: var(--text-secondary);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  user-select: none;
+}
+
+.nav {
+  font-size: 1.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.link {
+  font-size: 1.2rem;
+}
+
+.userData {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
