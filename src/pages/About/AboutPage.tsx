@@ -11,8 +11,10 @@ export const About = () => {
         <h1>О проекте</h1>
         <p>Тут какая-то информация о проекте</p>
         <div className={styles.links}>
-          <a href="http://localhost:8000/admin/">Админ-панель</a>
-          <a href="http://localhost:8000/api/v1/redoc/">Документация API</a>
+          <a href="https://playlists.akhmy.space/admin/">Админ-панель</a>
+          <a href="https://playlists.akhmy.space/api/v1/redoc/">
+            Документация API
+          </a>
         </div>
       </div>
     </>
