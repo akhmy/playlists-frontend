@@ -15,7 +15,7 @@ jobs:
           node-version: "22"
 
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
+        run: corepack enable && corepack prepare pnpm@10.30.0 --activate
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -26,10 +26,33 @@ jobs:
       - name: TypeScript
         run: pnpm exec tsc --noEmit
 
-  test:
-    name: Test
+  deps-audit:
+    name: Dependencies audit
     runs-on: ubuntu-24.04
-    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        run: corepack enable && corepack prepare pnpm@10.30.0 --activate
+
+      - name: Run pnpm audit
+        run: pnpm audit
+
+  sast:
+    name: SAST
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Semgrep
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: p/typescript
+
+  unit-test:
+    name: Unit testing
+    runs-on: ubuntu-24.04
+    needs: [lint, deps-audit, sast]
     steps:
       - uses: actions/checkout@v4
 
@@ -38,7 +61,7 @@ jobs:
           node-version: "22"
 
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
+        run: corepack enable && corepack prepare pnpm@10.30.0 --activate
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
