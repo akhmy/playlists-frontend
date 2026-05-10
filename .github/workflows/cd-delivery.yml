@@ -2,7 +2,7 @@ name: CD Delivery
 
 on:
   pull_request:
-    branches: [main]
+    branches: [master]
 
 env:
   IMAGE: ghcr.io/${{ github.repository_owner }}/playlists-frontend
