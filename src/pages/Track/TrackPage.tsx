@@ -7,16 +7,14 @@ import { TrackView } from "@/components/track/TrackView";
 
 export const TrackPage = () => {
   const { id } = useParams();
-  if (!id) return null;
-
   const [track, setTrack] = useState<Track>();
+
   useEffect(() => {
+    if (!id) return;
     trackApi.getTrack(id).then(setTrack);
-  }, []);
+  }, [id]);
 
-  if (!track) return null;
-
-  console.log(track);
+  if (!id || !track) return null;
 
   return (
     <>
