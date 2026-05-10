@@ -1,0 +1,14 @@
+name: CD Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    uses: akhmy/playlists-cd/.github/workflows/reusable-deploy.yml@main
+    secrets:
+      PROD_HOST: ${{ secrets.PROD_HOST }}
+      PROD_USER: ${{ secrets.PROD_USER }}
+      PROD_KEY: ${{ secrets.PROD_KEY }}
+      PROD_PORT: ${{ secrets.PROD_PORT }}
