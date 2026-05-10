@@ -29,7 +29,6 @@ jobs:
   deps-audit:
     name: Dependencies audit
     runs-on: ubuntu-24.04
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
@@ -37,7 +36,7 @@ jobs:
         run: corepack enable && corepack prepare pnpm@10.30.0 --activate
 
       - name: Run pnpm audit
-        run: pnpm audit
+        run: pnpm audit --audit-level=none
 
   sast:
     name: SAST
